@@ -19,7 +19,6 @@
                     <label>Kernel Url</label>
                     <comment>URL do kernel da API.</comment>
                 </field>
-
             </group>
         </section>
     </system>
