@@ -5,6 +5,8 @@
             <general>
                 <identity_url>https://cvale-fidelidade-identity-dev.azurewebsites.net</identity_url>
                 <kernel_url>https://cvale-fidelidade-kernel-dev.azurewebsites.net</kernel_url>
+                <programCurrencySymbol>SD$</programCurrencySymbol>
+                <programCurrencyName>Seed</programCurrencyName>
             </general>
         </acessos>
     </default>

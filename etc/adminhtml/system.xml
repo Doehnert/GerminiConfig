@@ -19,6 +19,14 @@
                     <label>Kernel Url</label>
                     <comment>URL do kernel da API.</comment>
                 </field>
+                <field id="programCurrencySymbol" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>programCurrencySymbol</label>
+                    <comment>Simbolo da moeda do Germini.</comment>
+                </field>
+                <field id="programCurrencyName" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>programCurrencyName</label>
+                    <comment>Nome da moeda do Germini.</comment>
+                </field>
             </group>
         </section>
     </system>
