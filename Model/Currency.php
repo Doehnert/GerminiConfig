@@ -1,9 +1,9 @@
 <?php
 
-namespace Vexpro\GerminiConf\Model;
+namespace Vexpro\GerminiConfig\Model;
 
 use Exception;
-use Vexpro\GerminiConf\Api\CurrencyInterface;
+use Vexpro\GerminiConfig\Api\CurrencyInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Currency implements CurrencyInterface

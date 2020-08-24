@@ -8,7 +8,7 @@
             <class>separator-top</class>
             <label>Germini</label>
             <tab>Germini</tab>
-            <resource>Vexpro_GerminiConf::acessos_config</resource>
+            <resource>Vexpro_GerminiConfig::acessos_config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>Configurações de Acesso</label>
                 <field id="identity_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">

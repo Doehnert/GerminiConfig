@@ -1,6 +1,6 @@
 <?php
 
-namespace Vexpro\GerminiConf\Api;
+namespace Vexpro\GerminiConfig\Api;
 
 interface CurrencyInterface
 {
