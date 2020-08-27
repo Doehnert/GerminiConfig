@@ -22,10 +22,16 @@
                 <field id="programCurrencySymbol" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>programCurrencySymbol</label>
                     <comment>Simbolo da moeda do Germini.</comment>
+
+                    <frontend_model>Vexpro\GerminiConfig\Block\System\Config\Form\Field\Symbol</frontend_model>
+                    
                 </field>
                 <field id="programCurrencyName" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>programCurrencyName</label>
                     <comment>Nome da moeda do Germini.</comment>
+
+                    <frontend_model>Vexpro\GerminiConfig\Block\System\Config\Form\Field\Name</frontend_model>
+
                 </field>
             </group>
         </section>
