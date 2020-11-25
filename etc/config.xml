@@ -4,6 +4,10 @@
         <acessos>
             <general>
                 <identity_url>https://cvale-fidelidade-identity-dev.azurewebsites.net</identity_url>
+
+                <identity_login></identity_login>
+                <identity_password></identity_password>
+
                 <kernel_url>https://cvale-fidelidade-kernel-dev.azurewebsites.net</kernel_url>
                 <programCurrencySymbol>SD$</programCurrencySymbol>
                 <programCurrencyName>Seed</programCurrencyName>

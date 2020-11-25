@@ -2,4 +2,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
   <preference for="Vexpro\GerminiConfig\Api\CurrencyInterface"
            type="Vexpro\GerminiConfig\Model\Currency"/>
+
+    <type name="Magento\Config\Model\Config">
+        <plugin name="admin_system_config_save_plugin" type="Vexpro\GerminiConfig\Plugin\ConfigPlugin" sortOrder="1"/>
+    </type>
+
 </config>

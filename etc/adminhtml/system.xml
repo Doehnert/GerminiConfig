@@ -13,10 +13,24 @@
                 <label>Configurações de Acesso</label>
                 <field id="identity_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Identity Url</label>
+                    <validate>required-entry</validate>
                     <comment>URL de autenticação da API.</comment>
                 </field>
+
+                <field id="identity_login" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Login do parceiro</label>
+                    <validate>required-entry</validate>
+                    <comment>Login do parceiro</comment>
+                </field>
+                <field id="identity_password" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Senha do parceiro</label>
+                    <validate>required-entry</validate>
+                    <comment>Senha do parceiro</comment>
+                </field>
+
                 <field id="kernel_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Kernel Url</label>
+                    <validate>required-entry</validate>
                     <comment>URL do kernel da API.</comment>
                 </field>
                 <field id="programCurrencySymbol" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
@@ -24,7 +38,7 @@
                     <comment>Simbolo da moeda do Germini.</comment>
 
                     <frontend_model>Vexpro\GerminiConfig\Block\System\Config\Form\Field\Symbol</frontend_model>
-                    
+
                 </field>
                 <field id="programCurrencyName" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>programCurrencyName</label>
