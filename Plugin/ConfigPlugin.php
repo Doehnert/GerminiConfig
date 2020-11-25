@@ -39,8 +39,12 @@ class ConfigPlugin
         \Closure $proceed
     ) {
         // your custom logic
-        $login = $subject->get()['groups']['general']['fields']['identity_login']['value'];
-        $password = $subject->get()['groups']['general']['fields']['identity_password']['value'];
+        $login = $subject->get()['groups']['general']['fields'];
+
+        if (array_key_exists('identity_login', $login)){
+            $login = $login['identity_login']['value'];
+
+            $password = $subject->get()['groups']['general']['fields']['identity_password']['value'];
 
         $url_base = $this->scopeConfig->getValue('acessos/general/identity_url', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
@@ -79,6 +83,9 @@ class ConfigPlugin
                 $messageManager->addSuccess('Usuário e senha validados com sucesso');
             }
         }
+        }
+
+
 
         return $proceed();
     }
