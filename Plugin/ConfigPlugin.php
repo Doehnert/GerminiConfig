@@ -38,13 +38,16 @@ class ConfigPlugin
         \Magento\Config\Model\Config $subject,
         \Closure $proceed
     ) {
-        // your custom logic
-        $login = $subject->get()['groups']['general']['fields'];
+        try{
+            $login = $subject->get()['groups']['general']['fields']['identity_login']['value'];
+        } catch (Exception $e) {
+            return $proceed();
+        } finally {
 
-        if (array_key_exists('identity_login', $login)){
-            $login = $login['identity_login']['value'];
+        if (!isset($login))
+            return $proceed();
 
-            $password = $subject->get()['groups']['general']['fields']['identity_password']['value'];
+        $password = $subject->get()['groups']['general']['fields']['identity_password']['value'];
 
         $url_base = $this->scopeConfig->getValue('acessos/general/identity_url', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
@@ -84,8 +87,6 @@ class ConfigPlugin
             }
         }
         }
-
-
 
         return $proceed();
     }
