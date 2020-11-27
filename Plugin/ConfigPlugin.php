@@ -6,15 +6,18 @@ class ConfigPlugin
 
     protected $scopeConfig;
     protected $catalogSession;
+    protected $_curl;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        \Magento\Catalog\Model\Session $catalogSession
+        \Magento\Catalog\Model\Session $catalogSession,
+        \Magento\Framework\HTTP\Client\Curl $curl
     )
     {
         $this->scopeConfig = $scopeConfig;
         $this->catalogSession = $catalogSession;
+        $this->_curl = $curl;
     }
 
     // Autentica o usuário
@@ -67,23 +70,24 @@ class ConfigPlugin
                 "scope" => "germini-api openid profile"
             ];
 
-            $data_json = json_encode($params);
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Accept: text/plain'));
+            $url = $url_base . '/connect/token';
 
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // $data_json = json_encode($params);
+            // $ch = curl_init();
+            // curl_setopt($ch, CURLOPT_URL, $url);
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Accept: text/plain'));
 
-            $response  = curl_exec($ch);
-            // $this->_curl->post($url, $params);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+            $this->_curl->post($url, $params);
+            //response will contain the output in form of JSON string
+            $response = $this->_curl->getBody();
+            $resultado = json_decode($response);
             //response will contain the output in form of JSON string
             $resultado = json_decode($response);
 
-            $messageManager->addSuccess($response);
-
-
-            if ($response == "" || $resultado->error){
+            if ($response == "" || isset($resultado->error)){
                 $messageManager->addError('Erro ao conectar com germini ou usuário e senha incorretos');
                 return;
             }
