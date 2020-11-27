@@ -4,18 +4,15 @@ namespace Vexpro\GerminiConfig\Plugin;
 class ConfigPlugin
 {
 
-    protected $_curl;
     protected $scopeConfig;
     protected $catalogSession;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\HTTP\Client\Curl $curl,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Catalog\Model\Session $catalogSession
     )
     {
-        $this->_curl = $curl;
         $this->scopeConfig = $scopeConfig;
         $this->catalogSession = $catalogSession;
     }
@@ -69,9 +66,18 @@ class ConfigPlugin
             "grant_type" => "password",
             "scope" => "germini-api openid profile"
         ];
-        $this->_curl->post($url, $params);
+
+        $data_json = json_encode($params);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Accept: text/plain'));
+
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $response  = curl_exec($ch);
+        // $this->_curl->post($url, $params);
         //response will contain the output in form of JSON string
-        $response = $this->_curl->getBody();
         $resultado = json_decode($response);
 
         $messageManager->addSuccess($resultado);
