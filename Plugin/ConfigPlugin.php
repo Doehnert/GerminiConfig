@@ -48,31 +48,31 @@ class ConfigPlugin
             return $proceed();
         } finally {
 
-            // $messageManager->addSuccess($login);
+            $messageManager->addSuccess($url_base);
 
         if (!isset($login))
             return $proceed();
 
         $password = $subject->get()['groups']['general']['fields']['identity_password']['value'];
 
-        $url_base = $this->scopeConfig->getValue('acessos/general/identity_url', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        // $url_base = $this->scopeConfig->getValue('acessos/general/identity_url', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 
-        $response = "";
-        $url = $url_base . '/connect/token';
-        $params = [
-            "username" => $login,
-            "password" => $password,
-            "client_id" => "ro.client.partner",
-            "client_secret" => "secret",
-            "grant_type" => "password",
-            "scope" => "germini-api openid profile"
-        ];
-        $this->_curl->post($url, $params);
-        //response will contain the output in form of JSON string
-        $response = $this->_curl->getBody();
-        $resultado = json_decode($response);
+        // $response = "";
+        // $url = $url_base . '/connect/token';
+        // $params = [
+        //     "username" => $login,
+        //     "password" => $password,
+        //     "client_id" => "ro.client.partner",
+        //     "client_secret" => "secret",
+        //     "grant_type" => "password",
+        //     "scope" => "germini-api openid profile"
+        // ];
+        // $this->_curl->post($url, $params);
+        // //response will contain the output in form of JSON string
+        // $response = $this->_curl->getBody();
+        // $resultado = json_decode($response);
 
-        $messageManager->addSuccess($resultado);
+        // $messageManager->addSuccess($resultado);
 
 
 
