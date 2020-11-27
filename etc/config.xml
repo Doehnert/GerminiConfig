@@ -3,12 +3,12 @@
     <default>
         <acessos>
             <general>
-                <identity_url>https://cvale-fidelidade-identity-dev.azurewebsites.net</identity_url>
+                <identity_url>https://cvale-fidelidade-identity-hom.azurewebsites.net</identity_url>
 
                 <identity_login>20024304034</identity_login>
                 <identity_password>Teste12#</identity_password>
 
-                <kernel_url>https://cvale-fidelidade-kernel-dev.azurewebsites.net</kernel_url>
+                <kernel_url>https://cvale-fidelidade-kernel-hom.azurewebsites.net</kernel_url>
                 <programCurrencySymbol>SD$</programCurrencySymbol>
                 <programCurrencyName>Seed</programCurrencyName>
             </general>
