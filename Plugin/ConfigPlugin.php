@@ -1,4 +1,5 @@
 <?php
+
 namespace Vexpro\GerminiConfig\Plugin;
 
 class ConfigPlugin
@@ -13,8 +14,7 @@ class ConfigPlugin
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Catalog\Model\Session $catalogSession,
         \Magento\Framework\HTTP\Client\Curl $curl
-    )
-    {
+    ) {
         $this->scopeConfig = $scopeConfig;
         $this->catalogSession = $catalogSession;
         $this->_curl = $curl;
@@ -42,13 +42,11 @@ class ConfigPlugin
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $messageManager = $objectManager->get('Magento\Framework\Message\ManagerInterface');
 
-        try{
+        try {
             $login = $subject->get()['groups']['general']['fields']['identity_login']['value'];
         } catch (Exception $e) {
             return $proceed();
-        }
-        finally
-        {
+        } finally {
 
             if (!isset($login))
                 return $proceed();
@@ -87,7 +85,7 @@ class ConfigPlugin
             //response will contain the output in form of JSON string
             $resultado = json_decode($response);
 
-            if ($response == "" || isset($resultado->error)){
+            if ($response == "" || isset($resultado->error)) {
                 $messageManager->addError('Erro ao conectar com germini ou usuário e senha incorretos');
                 return;
             }
