@@ -11,6 +11,8 @@
                 <kernel_url>https://cvale-fidelidade-kernel-hom.azurewebsites.net</kernel_url>
                 <programCurrencySymbol>SD$</programCurrencySymbol>
                 <programCurrencyName>Seed</programCurrencyName>
+
+                <sap_url>http://10.95.201.216:50000/XISOAPAdapter/MessageServlet?senderParty=&amp;senderService=BC_EVO&amp;receiverParty=&amp;receiverService=BS_300_CQE&amp;interface=SI_Recebimento_Cliente_Evo_Out_Sync&amp;interfaceNamespace=urn:cvale:i17:014</sap_url>
             </general>
         </acessos>
     </default>

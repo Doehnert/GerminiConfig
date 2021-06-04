@@ -47,6 +47,12 @@
                     <frontend_model>Vexpro\GerminiConfig\Block\System\Config\Form\Field\Name</frontend_model>
 
                 </field>
+
+                <field id="sap_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>sap_url</label>
+                    <validate>required-entry</validate>
+                    <comment>URL de integração com o SAP.</comment>
+                </field>
             </group>
         </section>
     </system>
