@@ -53,6 +53,12 @@
                     <validate>required-entry</validate>
                     <comment>URL de integração com o SAP.</comment>
                 </field>
+
+                <field id="images_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>images_url</label>
+                    <validate>required-entry</validate>
+                    <comment>URL de integração de imagens.</comment>
+                </field>
             </group>
         </section>
     </system>
