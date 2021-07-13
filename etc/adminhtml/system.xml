@@ -59,6 +59,16 @@
                     <validate>required-entry</validate>
                     <comment>URL de integração de imagens.</comment>
                 </field>
+                <field id="images_login" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>images_login</label>
+                    <validate>required-entry</validate>
+                    <comment>Login integração de imagens.</comment>
+                </field>
+                <field id="images_pwd" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>images_pwd</label>
+                    <validate>required-entry</validate>
+                    <comment>Senha integração de imagens.</comment>
+                </field>
             </group>
         </section>
     </system>
