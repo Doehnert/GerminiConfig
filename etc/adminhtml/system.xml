@@ -51,7 +51,7 @@
                 <field id="sap_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>sap_url</label>
                     <validate>required-entry</validate>
-                    <comment>URL de integração com o SAP.</comment>
+                    <comment>URL de integração com o SAP para criar BP.</comment>
                 </field>
 
                 <field id="images_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
