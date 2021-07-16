@@ -17,6 +17,8 @@
                 <images_url>https://e400237-iflmap.hcisbt.br1.hana.ondemand.com/cxf/Replicacao_Imagens_Produtos</images_url>
                 <images_login>S0022823521</images_login>
                 <images_pwd>cpMK_3901cv</images_pwd>
+
+                <cvale_url>https://www.cvalefidelidade.com.br</cvale_url>
             </general>
         </acessos>
     </default>

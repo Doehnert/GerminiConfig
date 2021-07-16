@@ -69,6 +69,11 @@
                     <validate>required-entry</validate>
                     <comment>Senha integração de imagens.</comment>
                 </field>
+                <field id="cvale_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>cvale_url</label>
+                    <validate>required-entry</validate>
+                    <comment>Url do programa de fidelidade.</comment>
+                </field>
             </group>
         </section>
     </system>
