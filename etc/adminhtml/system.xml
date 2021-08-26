@@ -27,6 +27,11 @@
                     <validate>required-entry</validate>
                     <comment>Senha do parceiro</comment>
                 </field>
+                <field id="partnercnpj" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>CNPJ do parceiro</label>
+                    <validate>required-entry</validate>
+                    <comment>CNPJ do parceiro</comment>
+                </field>
 
                 <field id="kernel_url" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Kernel Url</label>
